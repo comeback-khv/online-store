@@ -1,0 +1,101 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(17, 24, 39, 1);
+}
+
+.header__logo {
+  background-image: url('../../assets/img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 112px;
+  height: 64px;
+}
+
+.search {
+  display: flex;
+}
+
+.search__input {
+  width: 201px;
+  color: white;
+  padding: 0 12px;
+  background-color: #1f2937;
+  border: 1px solid rgba(107, 114, 128, 0.75);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  outline: none;
+}
+
+.search__input::placeholder {
+  color: white;
+}
+
+.search__icon {
+  width: 40px;
+  height: 36px;
+  background-color: #f59e0b;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-image: url('../../assets/svg/search.svg');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.header__icons-favourites {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../assets/svg/favourites.svg');
+}
+
+.header__icons-cart {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #f59e0b;
+  border-radius: 12px;
+  background-image: url('../../assets/svg/cart.svg');
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__icons-total {
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1f2937;
+  background-color: white;
+}
+
+.header__icons-user {
+  width: 40px;
+  height: 40px;
+  background-image: url('../../assets/svg/user.svg');
+}

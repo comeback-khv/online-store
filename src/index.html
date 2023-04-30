@@ -4,10 +4,60 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>SongBird</title>
+    <title>Online-store</title>
   </head>
   <body class="body">
-    <div class="container">
+    <div id="root">
+      <!-- <header class="header">
+        <div class="header__logo"></div>
+        <div class="search">
+          <input
+            class="search__input"
+            type="search"
+            name="product-search"
+            id="search__input"
+            placeholder="Search..."
+          />
+          <select name="product-select" id="search__select">
+            <option class="search__option" value="1">1</option>
+            <option class="search__option" value="2">2</option>
+            <option class="search__option" value="3">3</option>
+            <option class="search__option" value="4">4</option>
+            <option class="search__option" value="5">5</option>
+            <option class="search__option" value="6">6</option>
+          </select>
+          <div class="search__icon"></div>
+        </div>
+        <div class="header__icons">
+          <div class="header__icons-favourites"></div>
+          <div class="header__icons-cart">
+            <div class="header__icons-total">1</div>
+          </div>
+          <div class="header__icons-user"></div>
+        </div>
+      </header> -->
+      <main class="main">
+        <section class="filters">
+          <div class="filters__btns">
+            <button class="button filters__btns-reset">Reset Filters</button>
+            <button class="button filters__btns-copy">Copy Link</button>
+          </div>
+          <ul class="filters__list">
+            <li class="filters__item">
+              <ul class="filters__list-category">
+                Category ${this.createCategoryFilterList()}
+              </ul>
+            </li>
+            <li class="filters__item">
+              <ul class="filters__list-brand">
+                Brand ${this.createBrandFilterList()}
+              </ul>
+            </li>
+            <li class="filters__item">Price</li>
+            <li class="filters__item">Stock</li>
+          </ul>
+        </section>
+      </main>
     </div>
   </body>
 </html>
