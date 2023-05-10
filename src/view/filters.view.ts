@@ -1,41 +1,20 @@
 import { products } from '../store/products.json';
-import IProducts from '../types/products';
+import Products from '../types/products';
 
-const data: IProducts[] = products;
+const data: Products[] = products;
 
 class FiltersView {
-  root;
+  private createLayout() {}
 
-  constructor() {
-    this.root = document.getElementById('root') as HTMLElement;
-  }
-
-  private createCategoryFilterList() {
-    let categoryList = '';
-    const category = new Set(data.map(i => i.category));
-    category.forEach(i => {
-      categoryList += `<li class="filters__item-category">${i}</li>`;
-    });
-    return categoryList;
-  }
-
-  private createBrandFilterList() {
+  render(root: HTMLElement) {
     let brandList = '';
     const brand = new Set(data.map(i => i.brand));
     brand.forEach(i => {
       brandList += `<li class="filters__item-brand">${i}</li>`;
     });
-    return brandList;
-  }
-
-  private createLayout() {
-    console.log(data);
-    return ``;
-  }
-
-  render() {
-    // this.root.innerHTML += this.createLayout();
+    const template = brandList;
+    if (root) root.insertAdjacentHTML('beforeend', template);
   }
 }
 
-export default FiltersView;
+export default new FiltersView();

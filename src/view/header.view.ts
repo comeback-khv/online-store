@@ -1,12 +1,22 @@
+import headerController from '../controller/header.controller';
+
 class HeaderView {
-  root;
+  // init() {
+  //   this.render();
+  // }
 
-  constructor() {
-    this.root = document.getElementById('root') as HTMLElement;
-  }
+  private createLayout() {}
 
-  private createLayout() {
-    return `      <header class="header">
+  render(root: HTMLElement) {
+    // const updateMain = () => {
+    //   const products = document.querySelector('.products');
+    //   if (products) {
+    //     products.remove();
+    //   }
+    //   mainView.render(root);
+    // };
+
+    const template = `<h1 class="header__title">Amazon</h1>
         <div class="header__logo"></div>
         <div class="search">
           <input
@@ -32,16 +42,20 @@ class HeaderView {
             <div class="header__icons-total">1</div>
           </div>
           <div class="header__icons-user"></div>
-        </div>
-      </header>`;
-  }
+        </div>`;
 
-  render() {
-    this.root.innerHTML = this.createLayout();
+    if (root) root.insertAdjacentHTML('beforeend', template);
+
+    const headerLogo = document.querySelector('.header__logo');
+    if (headerLogo) {
+      headerLogo.addEventListener('click', () =>
+        headerController.route('main')
+      );
+    }
   }
 }
 
-export default HeaderView;
+export default new HeaderView();
 
 // class HeaderView {
 //   root;

@@ -1,14 +1,8 @@
-import AppView from './view/app.view';
+import appView from './view/app.view';
 
 class App {
-  appView;
-
-  constructor() {
-    this.appView = new AppView();
-  }
-
   start() {
-    this.appView.init();
+    appView.init();
   }
 }
 

@@ -15,6 +15,11 @@
   background-color: rgba(17, 24, 39, 1);
 }
 
+.header__title {
+  position: absolute;
+  font-size: 0;
+}
+
 .header__logo {
   background-image: url('../../assets/img/logo.png');
   background-size: contain;

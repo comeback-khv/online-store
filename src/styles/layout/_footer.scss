@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+  background-color: rgba(17, 24, 39, 1);
+}
+
+.footer__copyright {
+  color: white;
+}

@@ -1,4 +1,4 @@
-interface IProducts {
+interface Products {
   id: number;
   title: string;
   description: string;
@@ -12,4 +12,4 @@ interface IProducts {
   images: string[];
 }
 
-export default IProducts;
+export default Products;
