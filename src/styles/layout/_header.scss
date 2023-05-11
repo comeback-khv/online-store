@@ -1,18 +1,24 @@
 #root {
-  max-width: 1200px;
-  margin: 0 auto;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.header {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 40px;
+}
+
+.header {
+  background-color: rgba(17, 24, 39, 1);
+}
+
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(17, 24, 39, 1);
 }
 
 .header__title {

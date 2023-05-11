@@ -2,7 +2,6 @@ import headerView from './header.view';
 import mainView from './main.view';
 import footerView from './footer.view';
 import mainModel from '../model/main.model';
-import filtersView from './filters.view';
 import productsView from './products.view';
 import headerModel from '../model/header.model';
 
@@ -38,9 +37,8 @@ class AppView {
 
   render() {
     headerView.render(this.layout.header);
-    // filtersView.render(this.layout.main);
-    // productsView.render(this.layout.main);
-    mainView.render(this.layout.main);
+    productsView.render(this.layout.main);
+    // mainView.render(this.layout.main);
     footerView.render(this.layout.footer);
   }
 

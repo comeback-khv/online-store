@@ -1,10 +1,6 @@
 import headerController from '../controller/header.controller';
 
 class HeaderView {
-  // init() {
-  //   this.render();
-  // }
-
   private createLayout() {}
 
   render(root: HTMLElement) {
@@ -16,7 +12,8 @@ class HeaderView {
     //   mainView.render(root);
     // };
 
-    const template = `<h1 class="header__title">Amazon</h1>
+    const template = `<div class="container header__container">
+    <h1 class="header__title">Amazon</h1>
         <div class="header__logo"></div>
         <div class="search">
           <input
@@ -42,6 +39,7 @@ class HeaderView {
             <div class="header__icons-total">1</div>
           </div>
           <div class="header__icons-user"></div>
+        </div>
         </div>`;
 
     if (root) root.insertAdjacentHTML('beforeend', template);

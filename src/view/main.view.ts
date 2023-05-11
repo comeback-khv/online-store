@@ -4,7 +4,8 @@ class MainView {
   private createLayout() {}
 
   render(root: HTMLElement) {
-    const template = `<aside class="sidebar">
+    const template = `<div class="container main__container">
+          <aside class="sidebar">
           <ul class="sidebar__list">
             <li class="sidebar__item sidebar__item--active">Categories</li>
             <li class="sidebar__item">Mobiles</li>
@@ -35,7 +36,8 @@ class MainView {
           <section class="deals">
             <h2 class="deals__title">Hot Deals</h2>
           </section>
-        </div>`;
+        </div>
+      </div>`;
     if (root) root.insertAdjacentHTML('beforeend', template);
     const bannerBtn = document.querySelector('.banner__btn');
 
