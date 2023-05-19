@@ -2,8 +2,9 @@ import headerView from './header.view';
 import mainView from './main.view';
 import footerView from './footer.view';
 import mainModel from '../model/main.model';
-import productsView from './products.view';
+import productsView from './products/products.view';
 import headerModel from '../model/header.model';
+import productsModel from '../model/products.model';
 
 // import asideView from './aside.view';
 
@@ -32,12 +33,13 @@ class AppView {
     //     break;
     // }
     headerModel.on('update.path', () => mainView.render(this.layout.main));
-    mainModel.on('update.path', () => productsView.render(this.layout.main));
+    mainModel.on('update.path', () => productsView.init(this.layout.main));
+    // productsModel.on('update.filter', () => productsView.render());
   }
 
   render() {
     headerView.render(this.layout.header);
-    productsView.render(this.layout.main);
+    productsView.init(this.layout.main);
     // mainView.render(this.layout.main);
     footerView.render(this.layout.footer);
   }

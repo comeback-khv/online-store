@@ -22,6 +22,7 @@
 .filters__item {
   display: flex;
   margin-bottom: 14px;
+  cursor: pointer;
 }
 
 .filters__item-name {
@@ -29,6 +30,12 @@
 
 .filters__item-checkbox {
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.filters__label {
+  cursor: pointer;
+  width: 100%;
 }
 
 .products__list {
