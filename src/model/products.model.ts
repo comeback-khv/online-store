@@ -9,23 +9,35 @@ class ProductsModel extends EventEmitter {
   }
 
   updateURL() {
-    state.queryParametersString = state.filteredProducts.length
-      ? `?category=${state.queryParametersArray.join('↕')}`
-      : window.location.pathname;
-    window.history.pushState({}, '', state.queryParametersString);
+    const searchParameters = {};
+    Object.keys(state.filterParameters).forEach(i => {
+      if (state.filterParameters[i].length) {
+        searchParameters[i] = state.filterParameters[i];
+      }
+    });
+    const searchParams = Object.keys(searchParameters)
+      .map(i => i + '=' + searchParameters[i].map(i => i).join('-'))
+      .join('&');
+
+    history.pushState(
+      {},
+      '',
+      searchParams ? `?${searchParams}` : window.location.pathname
+    );
   }
 
   filterProducts(el: HTMLElement) {
-    console.log('da');
     const filter = el.dataset.filter;
     const parameter = el.dataset.parameter;
-    const isExist = state.filterParameters[filter].some(i => i === parameter);
-    if (isExist) {
-      state.filterParameters[filter] = state.filterParameters[filter].filter(
-        i => i != parameter
-      );
-    } else state.filterParameters[filter].push(parameter);
 
+    if (filter) {
+      const isExist = state.filterParameters[filter].some(i => i === parameter);
+      if (isExist) {
+        state.filterParameters[filter] = state.filterParameters[filter].filter(
+          i => i != parameter
+        );
+      } else state.filterParameters[filter].push(parameter);
+    }
     state.filteredProducts = [];
     let filteredByCategory = [];
     let filteredByBrand = [];
@@ -47,7 +59,6 @@ class ProductsModel extends EventEmitter {
         .flat(2);
       state.filteredProducts = filteredByBrand;
     }
-
     this.route();
   }
 }

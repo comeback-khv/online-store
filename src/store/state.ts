@@ -11,6 +11,7 @@ type State = {
     category: string[];
     brand: string[];
   };
+  searchParams: URLSearchParams;
 };
 
 export const state: State = {
@@ -22,4 +23,5 @@ export const state: State = {
     category: [],
     brand: [],
   },
+  searchParams: new URLSearchParams(),
 };
