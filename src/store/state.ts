@@ -4,24 +4,19 @@ import Products from '../types/products';
 type State = {
   products: Products[];
   filteredProducts: Products[];
-  queryParametersArray: string[];
-  queryParametersString: string;
   path?: string;
-  filterParameters: {
+  filterParams: {
+    [key: string]: string[];
     category: string[];
     brand: string[];
   };
-  searchParams: URLSearchParams;
 };
 
 export const state: State = {
   products: products,
-  queryParametersArray: [],
-  queryParametersString: '',
   filteredProducts: [],
-  filterParameters: {
+  filterParams: {
     category: [],
     brand: [],
   },
-  searchParams: new URLSearchParams(),
 };

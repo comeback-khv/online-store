@@ -18,27 +18,3 @@ export class EventEmitter {
     }
   }
 }
-
-// export class Observer {
-//   events = {};
-
-//   on(eventName: string, callback: () => void) {
-//     if (!this.events[eventName]) {
-//       this.events[eventName] = [];
-//     }
-//     this.events[eventName].push(callback);
-//     console.log(this.events);
-//   }
-
-//   off(eventName: string) {
-//     delete this.events[eventName];
-//   }
-
-//   emit(eventName: string, args?) {
-//     if (this.events[eventName]) {
-//       for (const callback of this.events[eventName]) {
-//         callback(args);
-//       }
-//     }
-//   }
-// }

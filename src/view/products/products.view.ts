@@ -55,7 +55,9 @@ class ProductsView {
   }
 
   addHandlers() {
-    const inputs = document.querySelectorAll('.filters__item-checkbox');
+    const inputs = document.querySelectorAll(
+      '.filters__item-checkbox'
+    ) as NodeListOf<HTMLElement>;
     inputs.forEach(input => {
       input.addEventListener('click', () => {
         productsController.filterProducts(input);
